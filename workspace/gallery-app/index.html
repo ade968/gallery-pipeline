@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Adrian Stock</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; }
+    .gallery { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+      gap: 15px; 
+    }
+    .gallery-item img { 
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+      cursor: pointer; 
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox.active { display: flex; }
+    .lb-img { max-width: 90%; max-height: 90%; }
+    .lb-controls { position: absolute; top: 20px; right: 20px; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <header><h1>Photography</h1></header>
+
+  <div class="gallery" id="gallery">
+    <!-- Items generated dynamically -->
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button id="lb-close">Close</button>
+    <img class="lb-img" id="lb-img" src="" alt="">
+  </div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const photos = [
+      'DSC_8947.JPG', 'DSC_8944.JPG', 'DSC_8942.JPG', 'DSC_8938.JPG',
+      'DSC_8937.JPG', 'DSC_8935.JPG', 'DSC_8934.JPG', 'DSC_8933.JPG',
+      'DSC_8926.JPG', 'DSC_8925.JPG'
+    ];
+
+    photos.forEach(src => {
+      const a = document.createElement('a');
+      a.className = 'gallery-item';
+      a.href = '#';
+      a.innerHTML = `<img src="../lightbox/images/2026 01/${src}" alt="${src}">`;
+      a.onclick = (e) => {
+        e.preventDefault();
+        lbImg.src = a.querySelector('img').src;
+        lightbox.classList.add('active');
+      };
+      gallery.appendChild(a);
+    });
+
+    lightbox.onclick = (e) => { if (e.target !== lbImg) lightbox.classList.remove('active'); };
+  </script>
+</body>
+</html>

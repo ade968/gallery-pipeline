@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery-pipeline Project Plan (v2)</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --accent-color: #ff5e00;
+            --text-color: #e0e0e0;
+            --text-muted: #8c8c8c;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 60px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .slide-deck {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .slide {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-num {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Diagrams */
+        .diagram {
+            background-color: #080808;
+            border: 1px dashed var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .node {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .arrow {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Carson Sandbox Preview Mock */
+        .carson-mock {
+            border: 1px solid #444;
+            padding: 20px;
+            background: #ffffff;
+            color: #000000;
+            font-family: "Impact", "Arial Black", sans-serif;
+            text-transform: uppercase;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .carson-title {
+            font-size: 3rem;
+            line-height: 0.8;
+            letter-spacing: -3px;
+            margin-bottom: 10px;
+            transform: rotate(-1deg);
+        }
+
+        .carson-sub {
+            font-family: Georgia, serif;
+            text-transform: none;
+            font-size: 1rem;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GALLERY-PIPELINE</h1>
+            <p class="subtitle">Interactive Delivery Plan • Phase-by-Phase Vision Execution</p>
+        </header>
+
+        <div class="slide-deck">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <div class="slide-num">01</div>
+                <h2>Project Workflow & Planning Rules</h2>
+                <p>To ensure total control and transparency over changes, every step of this project follows our strict three-phase gate:</p>
+                <div class="diagram">
+                    <div class="node">Step 1: Planning<br>(HTML Deck Stop & Wait)</div>
+                    <div class="arrow">➔</div>
+                    <div class="node">Step 2: Kanban Drafting<br>(Board Setup & Review)</div>
+                    <div class="arrow">➔</div>
+                    <div class="node">Step 3: Activation<br>(Task Execution)</div>
+                </div>
+                <p>We do not proceed to the next step without your explicit written instruction in the chat.</p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-num">02</div>
+                <h2>Phase 1: Benchmarking & Model Selection</h2>
+                <p>This is a pure development-stage sandbox to evaluate which AI model writes the best visual prose and metadata for your photos.</p>
+                <ol>
+                    <li><strong>1.1 Define Test Suite:</strong> We select a fixed test set of 3–4 images (e.g., the Jasmine photos and landscape tests).</li>
+                    <li><strong>1.2 Audition Models:</strong> We feed these images to 3 different models (e.g., Claude 3.5 Sonnet, Gemini 1.5 Pro, and Claude 3.5 Haiku).</li>
+                    <li><strong>1.3 Evaluate Sidecars:</strong> The pipeline generates comparison sidecars side-by-side in your working folder so you can review their descriptions and pick our preferred runtime champion.</li>
+                </ol>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-num">03</div>
+                <h2>Phase 2: UI Sandbox & Auditioning Design Skills</h2>
+                <p>Before writing the pipeline's publishing code, we will explore the visual container of your photography, focusing on typographic layout.</p>
+                <ol>
+                    <li><strong>2.1 Audition Design Skills:</strong> We will review and test specialized design skills to find the best layouts.</li>
+                    <li><strong>2.2 The Typography Sandbox:</strong> Build a local static prototyping page using dummy photos/text. We will use this to test Carson-inspired "Expressive Editorial" layouts.</li>
+                    <li><strong>2.3 Screen-size Exploration:</strong> Test how overlapping headers, dramatic text scales, and asymmetrical grids translate cleanly to mobile screens vs. desktop.</li>
+                </ol>
+                <div class="carson-mock">
+                    <div class="carson-title">David<br>Carson<br>Influence</div>
+                    <div class="carson-sub">Exploring editorial design baseline...</div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-num">04</div>
+                <h2>Phase 3: The Automation Pipeline (MVP)</h2>
+                <p>With our model chosen and UI structure approved, we build the core engine to process photo folders on demand.</p>
+                <div class="diagram">
+                    <div class="node">Input Folder</div>
+                    <div class="arrow">➔</div>
+                    <div class="node">Check Existing Sidecars<br>(Prompt on Conflict)</div>
+                    <div class="arrow">➔</div>
+                    <div class="node">EXIF Extraction<br>& AI Analysis</div>
+                    <div class="arrow">➔</div>
+                    <div class="node">Generate Manifest</div>
+                </div>
+                <ol>
+                    <li><strong>3.1 Manual Trigger:</strong> Implement a clean CLI capability trigger command.</li>
+                    <li><strong>3.2 State Reconciliation:</strong> Ensure the script checks for existing sidecars and prompts you in chat to either skip, merge metadata, or overwrite.</li>
+                    <li><strong>3.3 Manifest Generation:</strong> Generate a unified JSON manifest of all processed images to serve the UI.</li>
+                </ol>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <div class="slide-num">05</div>
+                <h2>Phase 4: Comparative Narratives & Groups</h2>
+                <p>Bringing in the human-AI collaborative curation features.</p>
+                <ol>
+                    <li><strong>4.1 Gallery-Level Markdown:</strong> Create a template for group-level narratives where you write your curator statement.</li>
+                    <li><strong>4.2 "Polly Perspective" Generation:</strong> Implement multi-voice AI responses driven by specific moods/personas matching the gallery's theme.</li>
+                    <li><strong>4.3 Side-by-Side Display:</strong> Render your narrative next to the multiple AI voices on the web index.</li>
+                </ol>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide">
+                <div class="slide-num">06</div>
+                <h2>Phase 5: Baseline UI & Deployment</h2>
+                <p>Bringing the complete project live.</p>
+                <ol>
+                    <li><strong>5.1 Grid Base-Design:</strong> Implement a clean, responsive thumbnail grid of your photography where each image can be clicked to fill the browser window.</li>
+                    <li><strong>5.2 Git & Vercel Pipeline:</strong> Set up the repository structure to push to GitHub, letting Vercel auto-deploy the static build on push.</li>
+                    <li><strong>5.3 Post-MVP (Full Chaos):</strong> Plan the step-up to a more extreme David Carson-inspired layout as a secondary style option.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
