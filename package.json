@@ -1,0 +1,18 @@
+{
+  "name": "gallery-pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/build-manifest.js",
+    "publish": "npm run build && git add . && git commit -m 'Publish update' && git push origin main"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
